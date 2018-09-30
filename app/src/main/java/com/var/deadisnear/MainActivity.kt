@@ -2,31 +2,36 @@ package com.`var`.deadisnear
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 
 class MainActivity : AppCompatActivity() {
 
-    val playButton: Button = findViewById(R.id.playButton)
-    val exitButton: Button = findViewById(R.id.exitButton)
-    val settingsButton: Button = findViewById(R.id.settingsButton)
+    lateinit var playButton: Button
+    lateinit var exitButton: Button
+    lateinit var settingsButton: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        playButton = findViewById(R.id.playButton);
+        exitButton = findViewById(R.id.exitButton);
+        settingsButton = findViewById(R.id.settingsButton);
+
         playButton.setOnClickListener {
             // TODO
-            print("Play")
+            Log.d("PlayButton", "clicked")
         }
 
         exitButton.setOnClickListener {
             // TODO
-            print("Exit")
+            Log.d("ExitButton", "clicked")
         }
 
         settingsButton.setOnClickListener {
             // TODO
-            print("Open settings")
+            Log.d("SettingsButton", "clicked")
         }
     }
 }
